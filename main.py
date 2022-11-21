@@ -25,5 +25,6 @@ for division in divisions:
         contender_name = contender.find('div', class_="views-row").a.text
         conteder_change = contender.find(
             'td', class_="views-field views-field-weight-class-rank-change").text
-        print(
-            f"Rank: {contender_rank.strip()}, Name: {contender_name.strip()}, Change: {conteder_change}")
+        if "Rank" in conteder_change or "NR" in conteder_change:
+            print(
+                f"Rank: {contender_rank.strip()}, Name: {contender_name.strip()}, Change: {conteder_change}")
